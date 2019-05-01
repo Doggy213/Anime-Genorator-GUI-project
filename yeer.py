@@ -2,7 +2,7 @@ import tkinter
 
 root = tkinter.Tk()
 
-homePage = tkinter.Frame(root, bg="blue", height=300, width=200)
+homePage = tkinter.Frame(root, bg="white", height=500, width=500)
 homePage.grid_propagate(False) #lock the home page and others are limited to this size
 homePage.grid(row=0, column=0, sticky="nsew")
 #if you fill any page with widgets that make it larger than this,
@@ -10,14 +10,18 @@ homePage.grid(row=0, column=0, sticky="nsew")
 
 
 #add as many pages as you need
-pageOne = tkinter.Frame(root, bg="green")
+pageOne = tkinter.Frame(root, bg="blue")
 pageOne.grid(row=0, column=0, sticky="nsew")
 pageTwo = tkinter.Frame(root, bg="orange")
 pageTwo.grid(row=0, column=0, sticky="nsew")
 pageThree = tkinter.Frame(root, bg="red")
 pageThree.grid(row=0, column=0, sticky="nsew")
-
-
+pageFour = tkinter.Frame(root, bg="purple")
+pageFour.grid(row=0, column=0, sticky="nsew")
+pageFive = tkinter.Frame(root, bg="green")
+pageFive.grid(row=0, column=0, sticky="nsew")
+pageSix = tkinter.Frame(root, bg="black")
+pageSix.grid(row=0, column=0, sticky="nsew")                    
 homePage.tkraise() #brings the homepage to the top to start with (or which ever page you choose)
 
 def showHome():
@@ -31,10 +35,17 @@ def showPageTwo():
     pageTwo.tkraise()
 
 def showPageThree():
-    pagethree.tkraise()
+    pageThree.tkraise()
     
-#Each page Frame has to be setup using grid() layouts
+def showPageFour():
+    pageFour.tkraise()
 
+def showPageFive():
+    pageFive.tkraise()
+    
+
+
+    
 #putting the widgets on and arranging the home page
 goToTwo = tkinter.Button(homePage, text="Stragety", fg="red", command=showPageTwo)
 goToTwo.grid(row=2, column=0, sticky="nsew")
@@ -47,17 +58,28 @@ goToOne.grid(row=0, column=0, sticky="nsew")
 
 
 #putting the widgets on and arranging pageOne
-label1 = tkinter.Label(pageOne, text="What power intrests?")
-label1.grid(row=0, column=0)
-
-goHome = tkinter.Button(pageOne, text="go to home", fg="brown", command=showHome)
+goHome = tkinter.Button(pageOne, text="Pride", fg="brown", command=showPageThree)
 goHome.grid(row=1, column=0, sticky="nsew")
+
+goHome = tkinter.Button(pageOne, text="Training", fg="brown", command=showPageFour)
+goHome.grid(row=2, column=0, sticky="nsew")
+
+goHome = tkinter.Button(pageOne, text="Family", fg="brown", command=showPageFive)
+goHome.grid(row=3, column=0, sticky="nsew")
+
+goHome = tkinter.Button(pageOne, text="go home", fg="brown", command=showHome)
+goHome.grid(row=4, column=0, sticky="nsew")
+
 
 
 
 #putting the widgets on and arranging pageTwo
-label1 = tkinter.Label(pageTwo, text="What type of stragety would you use in battle?")
+label1 = tkinter.Label(pageOne, text="What makes you gain power?")
 label1.grid(row=0, column=0)
+
+label1 = tkinter.Label(pageTwo, text="In battle what type of stragety would you use?")
+label1.grid(row=0, column=0)
+
 
 goHome = tkinter.Button(pageTwo, text="go to home", fg="brown", width=10, command=showHome)
 goHome.grid(row=4, column=0)
@@ -72,7 +94,27 @@ goHome = tkinter.Button(pageTwo, text="Observavitive", fg="brown", width=10, com
 goHome.grid(row=1, column=0)
 
 
+
+
+goHome = tkinter.Button(pageTwo, text="go to home", fg="brown", width=10, command=showHome)
+goHome.grid(row=4, column=0)
+
+goHome = tkinter.Button(pageTwo, text="Plan ahead of time", fg="brown", width=14, command=showPageThree)
+goHome.grid(row=2, column=0)
+
+goHome = tkinter.Button(pageTwo, text="Instinct", fg="brown", width=10, command=showPageThree)
+goHome.grid(row=3, column=0)
+
+goHome = tkinter.Button(pageTwo, text="Observavitive", fg="brown", width=10, command=showPageThree)
+goHome.grid(row=1, column=0)
+
+
+
+
+
+
 root.mainloop()
+
 
 
 
